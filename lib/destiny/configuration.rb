@@ -14,7 +14,12 @@ module Destiny
   class Configuration
     attr_accessor \
       :api_key,
-      :membership_id
+      :membership_id,
+      :log_level
+
+    def initialize
+      self.log_level = :debug
+    end
 
   end
 end

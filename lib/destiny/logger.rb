@@ -1,3 +1,5 @@
+require_relative 'configuration'
+
 module Destiny
 
   def self.logger
@@ -7,6 +9,7 @@ module Destiny
   class Logger
 
     def debug(message)
+      return if Destiny.configuration.log_level == :none
       if defined?(Rails::Logger)
         Rails.logger.debug message
       else
