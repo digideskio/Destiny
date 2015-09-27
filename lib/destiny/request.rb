@@ -2,13 +2,14 @@ require 'http'
 require_relative 'configuration'
 require_relative 'error'
 require_relative 'string'
+require_relative 'logger'
 
 module Destiny
   class Request
 
     def get(path, host: 'www.bungie.net', protocol: 'https', uri: nil)
       uri ||= "#{protocol}://#{host}#{parse_path(path)}"
-      puts "GET #{uri}"
+      Destiny.logger.debug "GET #{uri}"
       response = connection.get(uri)
       handle_response(response)
     end

@@ -51,7 +51,6 @@ module Destiny
         data[:data][:characters].each do |c|
           characters << Destiny::Character.new(c, data[:definitions])
         end
-        binding.pry
         characters
       end
     end

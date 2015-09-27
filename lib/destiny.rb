@@ -7,6 +7,7 @@ require 'destiny/character'
 require 'destiny/player_class'
 require 'destiny/gender'
 require 'destiny/race'
+require 'destiny/logger'
 
 module Destiny
 
